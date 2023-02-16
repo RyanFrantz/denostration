@@ -9,12 +9,8 @@ const edgeCount = (nodes: number = 0): string => {
   if (nodes <= 1) {
     return `No edges exist for ${nodes} node(s)!`;
   }
-  let numNodes = nodes;
-  let edges = 0;
-  // For n number of nodes, each node adds n-1 edges to the graph.
-  for (numNodes; numNodes > 0; numNodes--) {
-    edges += (numNodes - 1);
-  }
+  // (n^2 - n) / 2
+  const edges = ((nodes ** 2) - nodes) / 2;
   return `${nodes} nodes have up to ${edges} edges.`;
 }
 
